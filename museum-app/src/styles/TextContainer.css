@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Karla';
+  font-weight: bold;
+}
+
+.artist {
+  font-family: 'Karla';
+  font-weight: lighter;
+  color: #939393;
+}

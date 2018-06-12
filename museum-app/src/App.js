@@ -27,7 +27,7 @@ class App extends Component {
         <Card key={uuidv1()}>
           <CardSection>
             <TextContainer>
-            <p className='title'>{artwork.title}</p><br/>
+            <p className='title'>{artwork.longTitle}</p><br/>
             <p className='artist'>{artwork.principalOrFirstMaker}</p>
             </TextContainer>
           </CardSection>
@@ -42,7 +42,7 @@ class App extends Component {
       <div className='app'>
   {
     !this.state.artworks ?
-      <div>loading......</div>
+      <div className='loader'>loading......</div>
       :
       <NavBar/>
   }

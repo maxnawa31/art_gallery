@@ -18,6 +18,11 @@
   margin: 0 auto;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 2%;
+}
+
+.more-info-link {
+  cursor: pointer;
 }
 
 

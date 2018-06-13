@@ -4,8 +4,12 @@ import './App.css';
 import Card from './components/Card';
 import CardSection from './components/CardSection';
 import NavBar from './components/NavBar';
-import TextContainer from './components/TextContainer'
+import TextContainer from './components/TextContainer';
+import HomePage from './components/HomePage'
+import { Route, Link, Switch } from 'react-router-dom';
 const uuidv1 = require('uuid/v1');
+
+
 
 class App extends Component {
   constructor(props) {
@@ -20,36 +24,22 @@ class App extends Component {
     .then(data => this.setState({ artworks: data.artObjects }));
   }
   render() {
-    let allImages = ""
-    if(this.state.artworks) {
-      allImages = this.state.artworks.map(artwork => {
-        return(
-        <Card key={uuidv1()}>
-          <CardSection>
-            <TextContainer>
-            <p className='title'>{artwork.longTitle}</p><br/>
-            <p className='artist'>{artwork.principalOrFirstMaker}</p>
-            </TextContainer>
-          </CardSection>
-          <CardSection>
-        <img className='image' key={uuidv1()} src={artwork.webImage.url} alt=""/>
-        </CardSection>
-          </Card>
-        )
-      })
-    }
+
     return (
-      <div className='app'>
-  {
-    !this.state.artworks ?
-      <div className='loader'>loading......</div>
-      :
-      <NavBar/>
-  }
-      <div className='all-cards-container'>
-      {allImages}
+      <div>
+      <Switch>
+        <Route
+        path = '/'
+        component = {props => (
+          <HomePage
+          artworks = {this.state.artworks}
+          getMoreInfo = {this.getMoreInfo}
+          />
+        )}
+        />
+      </Switch>
       </div>
-      </div>
+
     );
   }
 }

@@ -3,7 +3,8 @@ import Card from './Card';
 import CardSection from './CardSection';
 import TextContainer from './TextContainer';
 import NavBar from '../components/NavBar'
-import '../App.css'
+import '../styles/HomePage.css'
+import {Link} from 'react-router-dom';
 const uuidv1 = require('uuid/v1');
 
 export default class HomePage extends Component {
@@ -14,24 +15,34 @@ export default class HomePage extends Component {
   getMoreInfo(id) {
     fetch(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=qyswhbUR&format=json&ps=100`)
     .then(res => res.json())
-    .then(data =>console.log(data));
+    .then(data => this.props.setIndivArtWork(data));
   }
   render() {
     let allImages = ""
     if(this.props.artworks) {
       allImages = this.props.artworks.map(artwork => {
         return(
-        <Card key={uuidv1()}>
-          <CardSection>
-            <TextContainer>
-            <a className='more-info-link' onClick={this.getMoreInfo.bind(this, artwork.objectNumber)}><p className='title'>{artwork.longTitle}</p></a><br/>
-            <p className='artist'>{artwork.principalOrFirstMaker}</p>
+      <Card key={uuidv1()}>
+        <CardSection>
+          <TextContainer>
+              <Link
+                className='more-info-link'
+                to= {`artworks/${artwork.objectNumber}`}
+                className='more-info-link'
+                >
+                <p className='title'>
+                {
+                  artwork.longTitle
+                }
+                </p>
+              </Link><br/>
+              <p className='artist'>{artwork.principalOrFirstMaker}</p>
             </TextContainer>
           </CardSection>
-          <CardSection>
+        <CardSection>
         <img className='image' key={uuidv1()} src={artwork.webImage.url} alt=""/>
         </CardSection>
-          </Card>
+      </Card>
         )
       })
     }

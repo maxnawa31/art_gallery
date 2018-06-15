@@ -1,0 +1,43 @@
+/* .artwork-frame {
+  height: 100%;
+  width: 70%;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 5%;
+  text-align: center;
+} */
+
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.indiv-image {
+  height: 60%;
+  width: 60%;
+  border: 1px solid black;
+  margin: 2%;
+  background-color: white;
+
+}
+
+.outer-frame {
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 5%;
+  margin: 5%;
+}
+
+
+/* .text-container {
+  height: 70%;
+  width: 40%;
+  border: 1px solid black;
+  background-color: white;
+  margin: 0 auto;
+  padding:
+} */

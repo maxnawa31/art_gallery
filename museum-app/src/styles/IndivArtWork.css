@@ -1,12 +1,10 @@
-/* .artwork-frame {
-  height: 100%;
-  width: 70%;
-  border: 1px solid black;
-  margin: 0 auto;
-  margin-top: 5%;
-  text-align: center;
-} */
+@import url('https://fonts.googleapis.com/css?family=Karla');
 
+.title-and-artist {
+  font-size: 1.25rem;
+  font-family: 'Karla';
+  margin-top: 1%;
+}
 
 .container {
   text-align: center;

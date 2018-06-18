@@ -26,10 +26,13 @@ export default class IndivArtWork extends Component {
           :
           <div className='container'>
             <div className='outer-frame'>
+            <div className = 'title-and-artist'>
+              {this.state.artWork.longTitle}
+            </div>
               <img className='indiv-image' src={`${this.state.artWork.webImage.url}`} alt=""/>
             </div>
             <TextCard >
-            {this.state.artWork.description}
+            {this.state.artWork.plaqueDescriptionEnglish}
             </TextCard>
           </div>
 

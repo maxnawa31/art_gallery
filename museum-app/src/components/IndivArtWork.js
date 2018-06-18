@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import '../styles/IndivArtWork.css';
-import Card from '../components/Card'
+import TextCard from '../components/TextCard'
 export default class IndivArtWork extends Component {
   constructor(props) {
     super(props);
@@ -28,9 +28,9 @@ export default class IndivArtWork extends Component {
             <div className='outer-frame'>
               <img className='indiv-image' src={`${this.state.artWork.webImage.url}`} alt=""/>
             </div>
-            <Card >
+            <TextCard >
             {this.state.artWork.description}
-            </Card>
+            </TextCard>
           </div>
 
         }

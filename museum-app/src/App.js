@@ -8,6 +8,7 @@ import TextContainer from './components/TextContainer';
 import HomePage from './components/HomePage'
 import IndivArtWork from './components/IndivArtWork'
 import { Route, Link, Switch } from 'react-router-dom';
+import { About } from '../src/components/About'
 const uuidv1 = require('uuid/v1');
 
 
@@ -46,6 +47,11 @@ class App extends Component {
           id={props.match.params.id}
           // artWorkData = {this.state.indivArtWork}
           />
+        )}/>
+        <Route
+        path = '/about'
+        component = {props => (
+          <About/>
         )}/>
         <Route
         path = '/'

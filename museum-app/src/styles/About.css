@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+.text-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin-left: 5%;
+  font-size: 1.25em;
+  font-family: 'Karla';
+  margin: 0 auto;
+  margin-top: 5%;
+}
